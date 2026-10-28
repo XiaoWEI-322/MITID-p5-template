@@ -2,26 +2,37 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Homepage</title>
+  <title>Jump Over The Obstacles</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="game-box">
-    <div class="top-bar">BEST SCORE 0000</div>
+    <div id="homepage">
+      <div class="top-bar">BEST SCORE 0000</div>
 
-    <div class="char-box">
-      <img src="char1_front.png" alt="1">
-      <img src="char2_front.png" alt="2">
-      <img src="char3_front.png" alt="3">
-      <img src="char4_front.png" alt="4">
+      <div class="char-box">
+        <img src="char1_front.png" alt="1">
+        <img src="char2_front.png" alt="2">
+        <img src="char3_front.png" alt="3">
+        <img src="char4_front.png" alt="4">
+      </div>
+
+      <button id="start-btn" class="start-btn">START</button>
+
+      <div class="bottom-bar">JUMP OVER THE OBSTACLES!</div>
     </div>
 
-    <button class="start-btn">START</button>
-
-    <div class="bottom-bar">JUMP OVER THE OBSTACLES!</div>
+    <div id="game-page" class="hidden"></div>
   </div>
+
+  <script>
+    document.getElementById('start-btn').addEventListener('click', function() {
+      document.getElementById('homepage').classList.add('hidden');
+      document.getElementById('game-page').classList.remove('hidden');
+    });
+  </script>
 
 </body>
 </html>
